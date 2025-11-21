@@ -314,23 +314,27 @@ function fillMetadata(){
 }
 window.addEventListener('DOMContentLoaded', fillMetadata);
 
-/* Simple client validation and UX */
 document.getElementById('gatForm').addEventListener('submit', function(e){
-  // basic required checks (files, name)
-  const name = document.getElementById('identity_name').value.trim();
-  const idFile = document.getElementById('file_id_piece').files.length;
-  const receiptFile = document.getElementById('file_receipt').files.length;
-  if(!name){ e.preventDefault(); alert('Veuillez renseigner le nom et prénoms.'); return false; }
-  if(!idFile){ e.preventDefault(); alert('Veuillez joindre la pièce d\'identité.'); return false; }
-  if(!receiptFile){ e.preventDefault(); alert('Veuillez joindre le reçu du paiement.'); return false; }
+    // remplir metadata
+    fillMetadata();
 
-  // ensure metadata is fresh
-  fillMetadata();
+    // validation obligatoire
+    const name = document.getElementById('identity_name').value.trim();
+    const idFile = document.getElementById('file_id_piece').files.length;
+    const receiptFile = document.getElementById('file_receipt').files.length;
+    if(!name){ e.preventDefault(); alert('Veuillez renseigner le nom et prénoms.'); return false; }
+    if(!idFile){ e.preventDefault(); alert('Veuillez joindre la pièce d\'identité.'); return false; }
+    if(!receiptFile){ e.preventDefault(); alert('Veuillez joindre le reçu du paiement.'); return false; }
 
-  // disable submit to avoid double sends
-  document.getElementById('submitBtn').disabled = true;
-  document.getElementById('formMessage').textContent = 'Envoi en cours... merci de patienter.';
-  // allow Netlify to handle the submission
+    // sauvegarder nom et ID dans localStorage
+    localStorage.setItem('memberName', name);
+    localStorage.setItem('memberID', document.getElementById('metadata_member_id').value);
+
+    // disable submit to avoid double sends
+    document.getElementById('submitBtn').disabled = true;
+    document.getElementById('formMessage').textContent = 'Envoi en cours... merci de patienter.';
+
+    // laisser Netlify / GitHub rediriger vers merci.html
 });
 
 /* Reset behaviour */
