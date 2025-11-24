@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Merci - GIE GREEN AGROTECH (GAT)</title>
+<meta name="author" content="GIE GREEN AGROTECH (GAT)">
+
+<style>
+:root{
+  --green:#1f8a3d; --dark:#203040; --muted:#6b7280; --paper:#ffffff;
+  --accent:#e6f4ea; --maxwidth:980px; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+html,body{height:100%;margin:0;background:#f3f4f6;color:var(--dark);}
+.wrap{max-width:var(--maxwidth);margin:28px auto;padding:0 18px;}
+.card{background:var(--paper);border-radius:8px;box-shadow:0 10px 30px rgba(12,20,30,0.06);overflow:hidden;position:relative;text-align:center;padding:32px;}
+.card::before{content:"GAT — OFFICIEL";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-28deg);font-weight:900;font-size:84px;color:#000;opacity:0.06;pointer-events:none;z-index:1;}
+h1{margin:0;font-size:22px;color:var(--green);}
+h2{margin:12px 0 6px;color:var(--dark);}
+p{margin:8px 0;font-size:14px;}
+.muted{color:var(--muted);font-size:13px;}
+.btn{background:var(--green);color:#fff;padding:12px 18px;border:0;border-radius:8px;cursor:pointer;font-weight:800;margin-top:16px;display:inline-block;text-decoration:none;}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>Merci pour votre adhésion ! 🎉</h1>
+    <p class="muted">Votre formulaire a été soumis avec succès au GIE GREEN AGROTECH (GAT).</p>
+    <h2>Votre numéro d’adhérent :</h2>
+    <p id="memberId">---</p>
+    <h2>Numéro du reçu :</h2>
+    <p id="receiptId">---</p>
+    <a href="index.html" class="btn">Retour au formulaire</a>
+  </div>
+</div>
+
+<script>
+// Récupération des metadata depuis localStorage si existants
+document.addEventListener("DOMContentLoaded", () => {
+  const data = JSON.parse(localStorage.getItem('gat_form_data')) || {};
+  document.getElementById('memberId').textContent = data.metadata_member_id || '---';
+  document.getElementById('receiptId').textContent = data.metadata_receipt_id || '---';
+});
+</script>
+
+</body>
+</html>

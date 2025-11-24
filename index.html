@@ -1,0 +1,190 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Formulaire d'adhésion - GIE GREEN AGROTECH (GAT)</title>
+<meta name="author" content="GIE GREEN AGROTECH (GAT)">
+
+<style>
+:root{
+  --green:#1f8a3d; --dark:#203040; --muted:#6b7280; --paper:#ffffff;
+  --accent:#e6f4ea; --maxwidth:980px; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+html,body{height:100%;margin:0;background:#f3f4f6;color:var(--dark);}
+.wrap{max-width:var(--maxwidth);margin:28px auto;padding:0 18px;}
+.card{background:var(--paper);border-radius:8px;box-shadow:0 10px 30px rgba(12,20,30,0.06);overflow:hidden;position:relative;}
+.card::before{content:"GAT — OFFICIEL";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-28deg);font-weight:900;font-size:84px;color:#000;opacity:0.06;pointer-events:none;z-index:1;}
+header{background:linear-gradient(90deg,var(--green),#2fb45b);color:#fff;padding:22px 28px;display:flex;gap:18px;align-items:center;position:relative;z-index:2;}
+header img{width:68px;height:68px;border-radius:10px;background:#fff;padding:6px;box-shadow:0 6px 16px rgba(0,0,0,0.08)}
+.htext h1{margin:0;font-size:20px;letter-spacing:0.3px}
+.htext p{margin:4px 0 0;font-size:13px;opacity:0.95}
+main{padding:22px 28px;position:relative;z-index:2}
+h2{margin:14px 0 8px 0;color:var(--dark);font-size:16px}
+.muted{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-weight:700;margin-bottom:6px;font-size:13px}
+input[type="text"], input[type="email"], input[type="tel"], select, textarea, input[type="file"]{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2;background:#fff;font-size:14px;box-sizing:border-box;
+}
+textarea{min-height:100px;resize:vertical}
+.section{border-left:5px solid var(--accent);padding:12px;background:#fff;border-radius:8px;margin-bottom:14px}
+.admin-box{background:#f8faf8;border:1px dashed #cfe8d4;padding:12px;border-radius:8px}
+.two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
+.btn{background:var(--green);color:#fff;padding:12px 18px;border:0;border-radius:8px;cursor:pointer;font-weight:800}
+.btn.secondary{background:#f3f4f6;color:var(--dark);border:1px solid #e9eef0}
+.center{text-align:center}
+.small{font-size:13px;color:var(--muted)}
+@media(max-width:880px){.grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}}
+@media print{.no-print{display:none}.card::before{opacity:0.02}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="card" role="article" aria-label="Formulaire d'adhésion GAT">
+
+```
+<header>
+  <img alt="Logo GAT" src="data:image/svg+xml;utf8,
+    <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'>
+      <rect width='100' height='100' rx='12' fill='%23ffffff'/>
+      <g transform='translate(12,10)'>
+        <rect width='76' height='76' rx='10' fill='%231f8a3d'/>
+        <text x='38' y='46' font-size='34' font-family='Arial' text-anchor='middle' fill='white'>GAT</text>
+      </g>
+    </svg>">
+  <div class="htext">
+    <h1>GIE GREEN AGROTECH (GAT)</h1>
+    <p class="muted">Formulaire d'adhésion officiel — Réf : GAT/ADH/FORM/2025</p>
+    <p class="muted">Siège : Rue Philibert, Libreville, Gabon — Email : contact.greenagrotech@gmail.com</p>
+  </div>
+</header>
+
+<main>
+  <form name="adhesion_gat_expert" method="POST" id="gatForm" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+    <input type="hidden" name="form-name" value="adhesion_gat_expert">
+    <div style="display:none"><label>Ne pas remplir <input name="bot-field"></label></div>
+
+    <!-- PREAMBULE -->
+    <section class="section">
+      <h2>PRÉAMBULE</h2>
+      <p class="muted">Le présent formulaire d'adhésion est établi conformément aux Statuts du GIE GREEN AGROTECH (GAT), au Règlement Intérieur et à l'Acte Uniforme OHADA relatif au GIE.</p>
+    </section>
+
+    <!-- IDENTITÉ -->
+    <section>
+      <h2>I. IDENTITÉ DU CANDIDAT</h2>
+      <div class="grid">
+        <div><label>Nom et prénoms *</label><input name="identity_name" type="text" required></div>
+        <div><label>Date & lieu de naissance</label><input name="identity_birth" type="text" placeholder="JJ/MM/AAAA — Lieu"></div>
+        <div><label>Nationalité</label><input name="identity_nationality" type="text" placeholder="Ex : Gabonaise"></div>
+        <div><label>Profession / activité</label><input name="identity_profession" type="text" placeholder="Profession principale"></div>
+        <div style="grid-column:1/3"><label>Adresse complète</label><input name="contact_address" type="text" placeholder="Adresse (domicile)"></div>
+        <div><label>Téléphone</label><input name="contact_phone" type="tel" placeholder="+241 6xxxxxxx"></div>
+        <div><label>Email</label><input name="contact_email" type="email" placeholder="contact@exemple.com"></div>
+        <div><label>Pièce d'identité (type & n°)</label><input name="identity_id" type="text" placeholder="CNI / Passeport - N°"></div>
+        <div><label>Date de délivrance / Lieu</label><input name="identity_id_info" type="text" placeholder="JJ/MM/AAAA — Lieu"></div>
+      </div>
+    </section>
+
+    <!-- CONDITIONS FINANCIÈRES -->
+    <section class="section">
+      <h2>III. CONDITIONS FINANCIÈRES</h2>
+      <div class="two-col">
+        <div>
+          <p class="muted">Apport d'enregistrement non remboursable :</p>
+          <ul class="muted">
+            <li><strong>Catégorie C :</strong> 100 FCFA</li>
+            <li><strong>Catégorie B :</strong> 5 000 FCFA</li>
+            <li><strong>Catégorie A :</strong> 10 000 FCFA</li>
+          </ul>
+          <label>Montant du droit d'entrée (FCFA)</label><input name="finance_entry_fee" type="text" placeholder="Ex : 10000">
+          <div class="grid">
+            <div><label>Cotisation Catégorie C</label><input name="finance_cot_C" type="text" placeholder="Ex : 1 000"></div>
+            <div><label>Cotisation Catégorie B</label><input name="finance_cot_B" type="text" placeholder="Ex : 25 000"></div>
+            <div><label>Cotisation Catégorie A</label><input name="finance_cot_A" type="text" placeholder="Ex : 50 000"></div>
+          </div>
+          <label>Autres obligations financières</label><textarea name="finance_other" placeholder="Le cas échéant..."></textarea>
+        </div>
+
+        <!-- CADRE ADMIN -->
+        <aside class="admin-box">
+          <strong>Classement & Catégorie</strong>
+          <div><label><input type="radio" name="classification_category" value="A"> Catégorie A — Membre Investisseur</label><br>
+               <label><input type="radio" name="classification_category" value="B"> Catégorie B — Membre Partenaire</label><br>
+               <label><input type="radio" name="classification_category" value="C"> Catégorie C — Membre Soutien</label></div>
+          <label>Motif du classement</label><textarea name="classification_reason"></textarea>
+          <label>Périodicité</label><select name="classification_periodicity">
+            <option value="mensuelle">Mensuelle</option>
+            <option value="trimestrielle">Trimestrielle</option>
+            <option value="annuelle">Annuelle</option>
+          </select>
+          <div><small class="small">Cliquez sur "Soumettre" pour enregistrer l'adhésion.</small></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PIÈCES À JOINDRE -->
+    <section class="section">
+      <h2>VI. PIÈCES À JOINDRE (UPLOAD)</h2>
+      <label>1. Pièce d'identité (scan ou photo)</label>
+      <input name="file_id_piece" type="file" required>
+      <label>2. Photo(s) d'identité</label>
+      <input name="file_photos" type="file" multiple>
+      <label>3. Reçu du droit d'entrée</label>
+      <input name="file_receipt" type="file" required>
+      <label>4. Document(s) supplémentaires</label>
+      <input name="file_additional" type="file" multiple>
+    </section>
+
+    <!-- SUBMIT -->
+    <div class="center no-print" style="margin:20px 0 30px 0">
+      <button type="submit" class="btn" id="submitBtn">Soumettre l'adhésion</button>
+    </div>
+  </form>
+</main>
+
+<footer style="padding:14px 22px;background:#fff;border-top:1px solid #eef2f7;position:relative;z-index:2">
+  <div style="font-weight:700">GIE GREEN AGROTECH (GAT)</div>
+  <div class="small">Formulaire d'adhésion — Réf : GAT/ADH/FORM/2025</div>
+</footer>
+```
+
+  </div>
+</div>
+
+<script>
+document.getElementById('gatForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true; submitBtn.textContent = 'Envoi en cours...';
+
+  const formData = Object.fromEntries(new FormData(e.target));
+
+  const pad = (n, s=4) => String(n).padStart(s,'0');
+  const now = new Date();
+  formData.metadata_member_id = `GAT-${now.getFullYear()}-${pad(Math.floor(Math.random()*9999)+1,4)}`;
+  formData.metadata_receipt_id = `REC-${now.getFullYear()}-${pad(Math.floor(Math.random()*99999)+1,5)}`;
+  formData.metadata_timestamp = now.toISOString();
+
+  try {
+    const res = await fetch("/.netlify/functions/submitForm", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+    if (!res.ok) throw new Error("Erreur lors de l'envoi");
+    window.location.href = "merci.html";
+  } catch(err) {
+    alert("Erreur lors de l'envoi. Réessaye plus tard."); 
+    console.error(err); 
+    submitBtn.disabled = false; 
+    submitBtn.textContent = 'Soumettre l\'adhésion';
+  }
+});
+</script>
+
+</body>
+</html>
